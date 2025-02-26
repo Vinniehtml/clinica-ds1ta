@@ -3,26 +3,49 @@ package br.senai.sp.jandira.clinica.model;
 import java.time.LocalDate;
 
 public class Paciente {
-	
+
 	public String nome;
 	public LocalDate dataNascimento;
-	public double peso;
-	public double altura;
+	private double peso;
+	private double altura;
 	public String telefone;
 	public boolean estaInternado;
-	
+
+	public void setAltura(double altura) {
+
+		if (altura > 0) {
+			// true
+			this.altura = altura;
+		} else {
+			// false
+			System.out.println("A altura do(a) paciente " + nome + " esta" + "incorreto!");
+		}
+
+	}
+
+	public void setPeso(double peso) {
+		if (peso >= 40) {
+			// true
+			this.peso = peso;
+		} else {
+			// false
+			System.out.println("O peso do paciente " + nome + "deve ser maior ou igual que 40 ");
+		}
+
+	}
+
 	public void calcularIdade() {
-		
+
 	}
-	
+
 	public void calcularImc() {
-		
+
 	}
-	
+
 	public void classificarImc() {
-		
+
 	}
-	
+
 	public void mostrarFichaPaciente() {
 		System.out.println("Nome: " + nome);
 		System.out.println("Peso: " + peso);
@@ -33,7 +56,7 @@ public class Paciente {
 		System.out.println("Internado: " + estaInternado);
 		System.out.println("------------------------");
 	}
-	
+
 	private String obterDiaSemanaNascimento() {
 		String diaSemana = dataNascimento.getDayOfWeek().toString();
 		return diaSemana;
