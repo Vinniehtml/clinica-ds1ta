@@ -20,7 +20,8 @@ public class Clinica {
 		p1.setAltura(1.78);
 		p1.setPeso(68.200);
 		p1.telefone = "(11)98888-8888";
-		p1.dataNascimento = LocalDate.of(2003, 2, 29);
+		p1.dataNascimento = LocalDate.of(2003, 2, 28);
+		p1.calcularImc();
 		p1.estaInternado = true;
 		
 		Paciente p2 = new Paciente();
@@ -30,6 +31,7 @@ public class Clinica {
 		p2.telefone = "(11)96666-6666";
 		p2.dataNascimento = LocalDate.of(1974, 5, 30);
 		p2.estaInternado = false;
+		p2.calcularImc();
 		
 		// Mostrar dados do paciente 1
 		p1.mostrarFichaPaciente();
